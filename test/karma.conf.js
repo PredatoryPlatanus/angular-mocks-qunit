@@ -1,9 +1,9 @@
-module.exports = function(config){
+module.exports = function (config) {
   config.set({
 
-    basePath : '../',
+    basePath: '../',
 
-    files : [
+    files: [
       'bower_components/angular/angular.js',
       'bower_components/angular-mocks/angular-mocks.js',
       'testables/testApp.js',
@@ -12,23 +12,23 @@ module.exports = function(config){
     ],
 
     coverageReporter: {
-      type : 'html',
-      dir : 'coverage/'
+      type: 'html',
+      dir: 'coverage/'
     },
 
-    autoWatch : false,
+    autoWatch: false,
 
     reporters: ['progress', 'coverage'],
 
     logLevel: config.LOG_DEBUG,
 
     browsers: ['PhantomJS'],
-    
+
     frameworks: ['qunit'],
 
     captureTimeout: 60000,
 
-    junitReporter : {
+    junitReporter: {
       outputFile: 'test_out/unit.xml',
       suite: 'unit'
     }

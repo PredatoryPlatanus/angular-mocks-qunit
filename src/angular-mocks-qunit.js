@@ -1,10 +1,10 @@
 /*
  * Provides 'inject' and 'module' functions
  * use to qunit from angular mocks.
- * 
+ *
  * 'module' function is renamed to 'ngModule'
  * since qunit already has its own 'module' function.
- * 
+ *
  * Usage is the same as in bare angular-mocks
  * when using it with jasmine / mocha.
  */
@@ -14,18 +14,18 @@
     if (window.QUnit) {
 
         var currentSpec = null,
-            isSpecRunning = function() {
+            isSpecRunning = function () {
                 return currentSpec && currentSpec.config.queue.length > 0;
             };
         var beforeEach = testStart;
         var afterEach = testDone;
 
 
-        beforeEach(function() {
+        beforeEach(function () {
             currentSpec = this;
         });
 
-        afterEach(function() {
+        afterEach(function () {
             var injector = currentSpec.$injector;
 
             currentSpec.$injector = null;
@@ -40,13 +40,13 @@
             angular.mock.clearDataCache();
 
             // clean up jquery's fragment cache
-            angular.forEach(angular.element.fragments, function(val, key) {
+            angular.forEach(angular.element.fragments, function (val, key) {
                 delete angular.element.fragments[key];
             });
 
             MockXhr.$$lastInstance = null;
 
-            angular.forEach(angular.callbacks, function(val, key) {
+            angular.forEach(angular.callbacks, function (val, key) {
                 delete angular.callbacks[key];
             });
             angular.callbacks.counter = 0;
@@ -103,28 +103,28 @@
         this.abort = angular.noop;
     }
 
-    window.ngModule = angular.mock.module = function() {
-            var moduleFns = Array.prototype.slice.call(arguments, 0);
-            return isSpecRunning() ? workFn() : workFn;
-            /////////////////////
-            function workFn() {
-                if (currentSpec.$injector) {
-                    throw new Error('Injector already created, can not register a module!');
-                } else {
-                    var modules = currentSpec.$modules || (currentSpec.$modules = []);
-                    angular.forEach(moduleFns, function(module) {
-                        if (angular.isObject(module) && !angular.isArray(module)) {
-                            modules.push(function($provide) {
-                                angular.forEach(module, function(value, key) {
-                                    $provide.value(key, value);
-                                });
+    window.ngModule = angular.mock.module = function () {
+        var moduleFns = Array.prototype.slice.call(arguments, 0);
+        return isSpecRunning() ? workFn() : workFn;
+        /////////////////////
+        function workFn() {
+            if (currentSpec.$injector) {
+                throw new Error('Injector already created, can not register a module!');
+            } else {
+                var modules = currentSpec.$modules || (currentSpec.$modules = []);
+                angular.forEach(moduleFns, function (module) {
+                    if (angular.isObject(module) && !angular.isArray(module)) {
+                        modules.push(function ($provide) {
+                            angular.forEach(module, function (value, key) {
+                                $provide.value(key, value);
                             });
-                        } else {
-                            modules.push(module);
-                        }
-                    });
-                }
+                        });
+                    } else {
+                        modules.push(module);
+                    }
+                });
             }
+        }
     };
 
     window.inject = angular.mock.inject = function () {
@@ -143,7 +143,8 @@
             }
             for (var i = 0, ii = blockFns.length; i < ii; i++) {
                 try {
-                    /* jshint -W040 *//* Jasmine explicitly provides a `this` object when calling functions */
+                    /* jshint -W040 */
+                    /* Jasmine explicitly provides a `this` object when calling functions */
                     injector.invoke(blockFns[i] || angular.noop, this);
                     /* jshint +W040 */
                 } catch (e) {
