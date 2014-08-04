@@ -2,6 +2,7 @@ Angular-mocks for Qunit
 ===================
 
 Full support of angular-mocks for qunit
+
 Provides $inject and module (renamed to ngModule) functions in qunit tests
 
 Status
