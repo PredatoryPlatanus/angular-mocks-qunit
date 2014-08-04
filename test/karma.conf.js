@@ -26,7 +26,8 @@ module.exports = function(config){
 
     logLevel: config.LOG_DEBUG,
 
-    browsers: ['Chrome', 'Chrome_without_security'],
+    //browsers: ['Chrome', 'Chrome_without_security'],
+    browsers: ['PhantomJS'],
     
     frameworks: ['qunit'],
 

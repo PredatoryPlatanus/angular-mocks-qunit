@@ -2,7 +2,7 @@
 
 /* qunit tests for angular-mocks-qunit go here */
 
-module('angular-mocks-qunit first part tests', {
+module('angular-mocks-qunit first no $provide override tests', {
 	setup:function(){
 		ngModule('app');
 	}
@@ -22,7 +22,20 @@ test('$httpBackend integration', inject(function($rootScope, $controller, _$http
 	$httpBackend.flush();
 	$scope.$digest();
 	equal($scope.httpGetResult, 'derp', "$httpBackend should be used for $http requests");
-	
+
 	$httpBackend.verifyNoOutstandingExpectation();
-    $httpBackend.verifyNoOutstandingRequest();
+	$httpBackend.verifyNoOutstandingRequest();
+}));
+
+
+module('angular-mocks-qunit first $provide override tests', {
+	setup:function(){
+		ngModule(function($provide){
+			$provide.constant('SOME_CONSTANT', 'DERP');
+		});
+	}
+});
+
+test('module $provide override',inject(function(SOME_CONSTANT){
+	equal(SOME_CONSTANT, 'DERP', "$provide should work");
 }));
