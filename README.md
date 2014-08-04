@@ -15,7 +15,7 @@ npm install angular-mocks-qunit
 
 Since Qunit already has `module()` defined angular-mocks function is renamed to `ngModule()`.
 
-`Inject()` isnt changed.
+`inject()` works with no changes.
 
 Both work the same way as they do in Jasmine/Mocha ie
 
