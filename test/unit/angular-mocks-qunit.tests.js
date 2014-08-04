@@ -1,5 +1,3 @@
-'use strict';
-
 /* qunit tests for angular-mocks-qunit go here */
 
 module('angular-mocks-qunit first no $provide override tests', {
