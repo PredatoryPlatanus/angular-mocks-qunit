@@ -11,6 +11,8 @@ Install `angular-mocks-qunit`:
 npm install angular-mocks-qunit
 ```
 
+
+
 Since Qunit already has `module()` defined angular-mocks function is renamed to `ngModule()`.
 
 `Inject()` isnt changed.
