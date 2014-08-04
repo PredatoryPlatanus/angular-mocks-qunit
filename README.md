@@ -11,9 +11,9 @@ Install `angular-mocks-qunit`:
 npm install angular-mocks-qunit
 ```
 
-Include
+Include js file in your tests
 ```
-angular-mocks-qunit.js in your tests
+angular-mocks-qunit.js 
 ```
 
 Since Qunit already has module function defined angular-mocks function is renamed to ngModule.
