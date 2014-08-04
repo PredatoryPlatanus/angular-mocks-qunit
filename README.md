@@ -1,7 +1,9 @@
-angular-mocks-qunit
+Angular-mocks deeper integration for Qunit
 ===================
 
 Full support of angular-mocks for qunit
+Provides $inject and module (renamed to ngModule) functions in qunit tests
 
-### Status
+Status
+===================
 [![Build Status](https://travis-ci.org/PredatoryPlatanus/angular-mocks-qunit.png?branch=master)](https://travis-ci.org/PredatoryPlatanus/angular-mocks-qunit)
