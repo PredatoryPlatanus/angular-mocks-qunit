@@ -1,4 +1,4 @@
-Angular-mocks deeper integration for Qunit
+Angular-mocks for Qunit
 ===================
 
 Full support of angular-mocks for qunit
