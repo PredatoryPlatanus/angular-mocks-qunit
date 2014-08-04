@@ -11,10 +11,6 @@ module.exports = function(config){
       'test/unit/**/*.js'
     ],
 
-// preprocessors: {
-//   'src/*.js': ['coverage']
-// },
-
     coverageReporter: {
       type : 'html',
       dir : 'coverage/'
