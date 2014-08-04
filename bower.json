@@ -1,0 +1,10 @@
+{
+  "name": "angular-mocks-qunit",
+  "description": "Full support of angular-mocks for qunit ",
+  "version": "0.0.0",
+  "homepage": "https://github.com/PredatoryPlatanus/angular-mocks-qunit",
+  "license": "MIT",
+  "private": false,
+  "dependencies": {
+  }
+}
