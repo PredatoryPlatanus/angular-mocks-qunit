@@ -1,6 +1,5 @@
 
 # Angular-mocks-qunit [![Build Status](https://travis-ci.org/PredatoryPlatanus/angular-mocks-qunit.png?branch=master)](https://travis-ci.org/PredatoryPlatanus/angular-mocks-qunit)
-===================
 > Angular-mocks-qunit - lets you use inject() and ngModule() in Qunit
 
 Angular-mocks does not fully support Qunit framework hence inject and module functions are not available.
